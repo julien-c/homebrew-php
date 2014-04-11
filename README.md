@@ -148,17 +148,17 @@ If using FPM, you will need to unload the `plist` controlling php, or manually s
 ```sh
 # Swapping from PHP53 to PHP54
 # $HOMEBREW_PREFIX is normally `/usr/local`
-cp $HOMEBREW_PREFIX/Cellar/php54/5.4.15/homebrew-php.josegonzalez.php54.plist ~/Library/LaunchAgents/
-launchctl unload -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php53.plist
-launchctl load -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist
+cp $HOMEBREW_PREFIX/Cellar/php54/5.4.15/homebrew-php.homebrew.php54.plist ~/Library/LaunchAgents/
+launchctl unload -w ~/Library/LaunchAgents/homebrew-php.homebrew.php53.plist
+launchctl load -w ~/Library/LaunchAgents/homebrew-php.homebrew.php54.plist
 ```
 
 If you would like to swap the PHP you use on the command line, you should update the `$PATH` variable in either your `.bashrc` or `.bash_profile`:
 
 ```sh
 # Swapping from PHP53 to PHP54
-# export PATH="$(brew --prefix josegonzalez/php/php53)/bin:$PATH"
-export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
+# export PATH="$(brew --prefix homebrew/php/php53)/bin:$PATH"
+export PATH="$(brew --prefix homebrew/php/php54)/bin:$PATH"
 ```
 
 Please be aware that you must make this type of change EACH time you swap between PHP `minor` versions. You will typically only need to update the Apache/FPM when upgrading your php `patch` version.
